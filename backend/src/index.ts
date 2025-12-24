@@ -18,7 +18,7 @@ app.use(cors());
 app.use(morgan('dev'));
 app.use(express.json());
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 
 import { initDb } from './db';
 import { seedDatabase } from './db/seed';

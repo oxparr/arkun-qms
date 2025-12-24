@@ -2,7 +2,7 @@
 import Database from 'better-sqlite3';
 import path from 'path';
 
-const dbPath = path.resolve(__dirname, '../../database.sqlite');
+const dbPath = process.env.DB_PATH || path.resolve(__dirname, '../../database.sqlite');
 const db = new Database(dbPath);
 
 // Enable foreign keys
