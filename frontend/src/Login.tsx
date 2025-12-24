@@ -31,7 +31,7 @@ export default function Login() {
             <div className="w-full max-w-md rounded-lg border border-slate-700/50 bg-slate-900/60 p-8 backdrop-blur-md relative z-10 shadow-2xl">
                 <div className="flex flex-col items-center justify-center mb-8">
                     <Cpu className="w-12 h-12 text-emerald-400 animate-pulse" />
-                    <h1 className="mt-4 text-center text-2xl font-bold text-white tracking-tight">BAKIRDEF</h1>
+                    <h1 className="mt-4 text-center text-2xl font-bold text-white tracking-tight">ARKUN</h1>
                     <p className="mt-2 text-sm text-slate-400 font-mono">Secure Access Portal</p>
                 </div>
 
