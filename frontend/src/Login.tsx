@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useAuth } from './lib/auth';
 import api from './lib/api';
-import { Cpu, User, Key, AlertTriangle } from 'lucide-react';
+import { Cpu, User, Key, AlertTriangle, Info } from 'lucide-react';
 
 export default function Login() {
     const { login } = useAuth();
@@ -91,7 +91,15 @@ export default function Login() {
                         {isLoading ? 'Verifying Credentials...' : 'Authenticate'}
                     </button>
 
-                    <div className="flex items-start gap-3 rounded-md border border-amber-500/30 bg-amber-500/10 p-3 mt-6">
+                    <div className="flex items-start gap-3 rounded-md border border-cyan-500/30 bg-cyan-500/10 p-3 mt-6">
+                        <Info className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
+                        <div className="flex flex-col">
+                            <p className="font-bold text-cyan-500 text-sm">Demo Access</p>
+                            <p className="text-xs text-slate-400 mt-1">For presentation purposes, you can log in using Operator ID: <span className="font-mono text-cyan-400">admin</span> and any Security Key.</p>
+                        </div>
+                    </div>
+
+                    <div className="flex items-start gap-3 rounded-md border border-amber-500/30 bg-amber-500/10 p-3 mt-4">
                         <AlertTriangle className="w-5 h-5 text-amber-500 shrink-0 mt-0.5" />
                         <div className="flex flex-col">
                             <p className="font-bold text-amber-500 text-sm">Warning: High Security Zone</p>
