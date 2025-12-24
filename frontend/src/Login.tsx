@@ -28,7 +28,7 @@ export default function Login() {
             {/* Background Effects */}
             <div className="absolute inset-0 pattern-grid-slate-800 opacity-20 pointer-events-none" />
 
-            <div className="w-full max-w-md rounded-lg border border-slate-700/50 bg-slate-900/60 p-8 backdrop-blur-md relative z-10 shadow-2xl">
+            <div className="w-full max-w-md rounded-lg border border-slate-700/50 bg-slate-900/60 p-6 md:p-8 backdrop-blur-md relative z-10 shadow-2xl">
                 <div className="flex flex-col items-center justify-center mb-8">
                     <Cpu className="w-12 h-12 text-emerald-400 animate-pulse" />
                     <h1 className="mt-4 text-center text-2xl font-bold text-white tracking-tight">ARKUN</h1>
@@ -91,11 +91,19 @@ export default function Login() {
                         {isLoading ? 'Verifying Credentials...' : 'Authenticate'}
                     </button>
 
+                    <div className="flex items-start gap-3 rounded-md border border-blue-500/30 bg-blue-500/10 p-3 mt-4">
+                        <Info className="w-5 h-5 text-blue-500 shrink-0 mt-0.5" />
+                        <div className="flex flex-col">
+                            <p className="font-bold text-blue-500 text-sm">SYSTEM NOTICE</p>
+                            <p className="text-xs text-slate-400 mt-1">ARKUN is optimized for desktop environments. Some modules and high-density data tables may not be fully accessible on mobile devices.</p>
+                        </div>
+                    </div>
+
                     <div className="flex items-start gap-3 rounded-md border border-cyan-500/30 bg-cyan-500/10 p-3 mt-6">
                         <Info className="w-5 h-5 text-cyan-500 shrink-0 mt-0.5" />
                         <div className="flex flex-col">
                             <p className="font-bold text-cyan-500 text-sm">Demo Access</p>
-                            <p className="text-xs text-slate-400 mt-1">For presentation purposes, you can log in using Operator ID: <span className="font-mono text-cyan-400">admin</span> and any Security Key.</p>
+                            <p className="text-xs text-slate-300 mt-1 font-medium">For presentation purposes, you can log in using <br />Operator ID: <span className="font-bold text-cyan-400 bg-cyan-950/30 px-1 rounded">admin</span> and any Security Key.</p>
                         </div>
                     </div>
 

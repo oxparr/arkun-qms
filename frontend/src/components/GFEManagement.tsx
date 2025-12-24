@@ -194,7 +194,7 @@ export function GFEManagement() {
             </div>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full">
+            <table className="w-full min-w-[800px]">
               <thead className="bg-gray-50 dark:bg-slate-800 border-b border-gray-200 dark:border-slate-700">
                 <tr>
                   <th className="text-left px-4 py-3 text-gray-600 dark:text-slate-400 font-bold text-xs uppercase tracking-wider">Item Details</th>

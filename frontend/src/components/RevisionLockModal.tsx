@@ -22,7 +22,7 @@ export function RevisionLockModal({ onAcknowledge }: RevisionLockModalProps) {
 
   return (
     <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4">
-      <div className="bg-white rounded-lg max-w-3xl w-full shadow-2xl">
+      <div className="bg-white rounded-lg max-w-3xl w-full shadow-2xl max-h-[90vh] overflow-y-auto">
         {/* Header with Lock Icon */}
         <div className="bg-red-600 text-white p-6 rounded-t-lg">
           <div className="flex items-center gap-4">
@@ -48,7 +48,7 @@ export function RevisionLockModal({ onAcknowledge }: RevisionLockModalProps) {
               <AlertTriangle className="w-6 h-6 text-yellow-600 flex-shrink-0 mt-0.5" />
               <div>
                 <p className="text-yellow-800 mb-2">
-                  <strong>ATTENTION OPERATORS:</strong> New engineering revisions have been released. 
+                  <strong>ATTENTION OPERATORS:</strong> New engineering revisions have been released.
                   You must review and acknowledge these changes before resuming production.
                 </p>
                 <p className="text-yellow-700">
@@ -70,9 +70,8 @@ export function RevisionLockModal({ onAcknowledge }: RevisionLockModalProps) {
                       <span className="px-2 py-1 bg-blue-100 text-blue-700 rounded">
                         Rev {change.oldRev} → {change.newRev}
                       </span>
-                      <span className={`px-2 py-1 rounded text-white ${
-                        change.changeType === 'Critical' ? 'bg-red-500' : 'bg-orange-500'
-                      }`}>
+                      <span className={`px-2 py-1 rounded text-white ${change.changeType === 'Critical' ? 'bg-red-500' : 'bg-orange-500'
+                        }`}>
                         {change.changeType}
                       </span>
                     </div>
@@ -119,11 +118,10 @@ export function RevisionLockModal({ onAcknowledge }: RevisionLockModalProps) {
             <button
               onClick={handleAcknowledge}
               disabled={!acknowledged || !signature.trim()}
-              className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-colors ${
-                acknowledged && signature.trim()
+              className={`flex items-center gap-2 px-6 py-3 rounded-lg transition-colors ${acknowledged && signature.trim()
                   ? 'bg-green-600 text-white hover:bg-green-700'
                   : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-              }`}
+                }`}
             >
               <CheckCircle className="w-5 h-5" />
               Acknowledge & Unlock System

@@ -183,7 +183,7 @@ export function OperatorCompetency() {
           <h3 className="text-gray-900 dark:text-slate-100">Operator Skill Matrix</h3>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full">
+          <table className="w-full min-w-[800px]">
             <thead className="bg-gray-50 dark:bg-slate-900 border-b border-gray-200 dark:border-slate-700">
               <tr>
                 <th className="text-left px-6 py-3 text-gray-600 dark:text-slate-400 font-medium text-sm">Operator</th>

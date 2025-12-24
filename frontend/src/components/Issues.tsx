@@ -184,52 +184,54 @@ export function Issues() {
 
       {/* --- NCR List --- */}
       <div className="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 rounded-xl shadow-sm overflow-hidden">
-        <table className="w-full text-left">
-          <thead>
-            <tr className="bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
-              <th className="px-6 py-4">NCR ID</th>
-              <th className="px-6 py-4">Title</th>
-              <th className="px-6 py-4">Part Number</th>
-              <th className="px-6 py-4">Severity</th>
-              <th className="px-6 py-4">Status</th>
-              <th className="px-6 py-4">Disposition</th>
-              <th className="px-6 py-4">Due Date</th>
-              <th className="px-6 py-4"></th>
-            </tr>
-          </thead>
-          <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
-            {ncrs.map(ncr => (
-              <tr
-                key={ncr.id}
-                onClick={() => handleEditNCR(ncr)}
-                className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group cursor-pointer border-b last:border-0 border-slate-100 dark:border-slate-800"
-              >
-                <td className="px-6 py-4 font-mono font-bold text-slate-500 dark:text-slate-400 text-xs">{ncr.id}</td>
-                <td className="px-6 py-4 font-bold text-slate-800 dark:text-slate-200 text-sm">{ncr.title}</td>
-                <td className="px-6 py-4 font-mono text-xs text-slate-600 dark:text-slate-400">{ncr.partNumber}</td>
-                <td className="px-6 py-4">
-                  <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase border ${getSeverityColor(ncr.severity)}`}>
-                    {ncr.severity}
-                  </span>
-                </td>
-                <td className="px-6 py-4">
-                  <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${ncr.status === 'Open' ? 'bg-rose-50 text-rose-600 border-rose-100 dark:bg-rose-900/30 dark:text-rose-400 dark:border-rose-900/50' :
-                    ncr.status === 'In Progress' ? 'bg-blue-50 text-blue-600 border-blue-100 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-900/50' :
-                      ncr.status === 'Contained' ? 'bg-amber-50 text-amber-600 border-amber-100 dark:bg-amber-900/30 dark:text-amber-400 dark:border-amber-900/50' :
-                        'bg-purple-50 text-purple-600 border-purple-100 dark:bg-purple-900/30 dark:text-purple-400 dark:border-purple-900/50'
-                    }`}>
-                    {ncr.status}
-                  </span>
-                </td>
-                <td className="px-6 py-4 text-xs font-medium text-slate-600 dark:text-slate-400">{ncr.disposition}</td>
-                <td className="px-6 py-4 text-xs text-slate-500 dark:text-slate-500 font-mono">{ncr.dueDate}</td>
-                <td className="px-6 py-4 text-right">
-                  <ArrowRight className="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-blue-500 transition-colors" />
-                </td>
+        <div className="overflow-x-auto">
+          <table className="w-full text-left min-w-[1000px]">
+            <thead>
+              <tr className="bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700 text-xs font-bold uppercase text-slate-500 dark:text-slate-400 tracking-wider">
+                <th className="px-6 py-4">NCR ID</th>
+                <th className="px-6 py-4">Title</th>
+                <th className="px-6 py-4">Part Number</th>
+                <th className="px-6 py-4">Severity</th>
+                <th className="px-6 py-4">Status</th>
+                <th className="px-6 py-4">Disposition</th>
+                <th className="px-6 py-4">Due Date</th>
+                <th className="px-6 py-4"></th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody className="divide-y divide-slate-100 dark:divide-slate-800">
+              {ncrs.map(ncr => (
+                <tr
+                  key={ncr.id}
+                  onClick={() => handleEditNCR(ncr)}
+                  className="hover:bg-slate-50 dark:hover:bg-slate-800/50 transition-colors group cursor-pointer border-b last:border-0 border-slate-100 dark:border-slate-800"
+                >
+                  <td className="px-6 py-4 font-mono font-bold text-slate-500 dark:text-slate-400 text-xs">{ncr.id}</td>
+                  <td className="px-6 py-4 font-bold text-slate-800 dark:text-slate-200 text-sm">{ncr.title}</td>
+                  <td className="px-6 py-4 font-mono text-xs text-slate-600 dark:text-slate-400">{ncr.partNumber}</td>
+                  <td className="px-6 py-4">
+                    <span className={`px-2 py-0.5 rounded text-[10px] font-bold uppercase border ${getSeverityColor(ncr.severity)}`}>
+                      {ncr.severity}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4">
+                    <span className={`px-2 py-0.5 rounded-full text-[10px] font-bold border ${ncr.status === 'Open' ? 'bg-rose-50 text-rose-600 border-rose-100 dark:bg-rose-900/30 dark:text-rose-400 dark:border-rose-900/50' :
+                      ncr.status === 'In Progress' ? 'bg-blue-50 text-blue-600 border-blue-100 dark:bg-blue-900/30 dark:text-blue-400 dark:border-blue-900/50' :
+                        ncr.status === 'Contained' ? 'bg-amber-50 text-amber-600 border-amber-100 dark:bg-amber-900/30 dark:text-amber-400 dark:border-amber-900/50' :
+                          'bg-purple-50 text-purple-600 border-purple-100 dark:bg-purple-900/30 dark:text-purple-400 dark:border-purple-900/50'
+                      }`}>
+                      {ncr.status}
+                    </span>
+                  </td>
+                  <td className="px-6 py-4 text-xs font-medium text-slate-600 dark:text-slate-400">{ncr.disposition}</td>
+                  <td className="px-6 py-4 text-xs text-slate-500 dark:text-slate-500 font-mono">{ncr.dueDate}</td>
+                  <td className="px-6 py-4 text-right">
+                    <ArrowRight className="w-4 h-4 text-slate-300 dark:text-slate-600 group-hover:text-blue-500 transition-colors" />
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
 
       {/* --- EDIT NCR MODAL --- */}

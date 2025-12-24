@@ -174,10 +174,10 @@ export function Dashboard() {
   ];
 
   return (
-    <div className="flex flex-col h-full overflow-hidden bg-slate-50 dark:bg-slate-950 space-y-6 p-6 transition-colors duration-300">
+    <div className="flex flex-col h-full overflow-hidden bg-slate-50 dark:bg-slate-950 space-y-6 p-4 md:p-6 transition-colors duration-300">
 
       {/* --- Corporate Header --- */}
-      <header className="flex items-center justify-between bg-white dark:bg-slate-900 px-6 py-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
+      <header className="flex items-center justify-between bg-white dark:bg-slate-900 px-4 py-3 md:px-6 md:py-4 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm transition-colors duration-300">
         <div>
           <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100 tracking-tight">DIGITAL TWIN</h2>
           <div className="flex items-center gap-3 text-xs font-medium text-slate-500 dark:text-slate-400 mt-1">
@@ -281,7 +281,7 @@ export function Dashboard() {
               const Icon = stat.icon;
               const TrendIcon = stat.trend === 'up' ? TrendingUp : TrendingDown;
               return (
-                <div key={i} className="flex flex-col justify-between bg-white dark:bg-slate-900 rounded-xl p-5 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow duration-200 h-32">
+                <div key={i} className="flex flex-col justify-between bg-white dark:bg-slate-900 rounded-xl p-4 md:p-5 border border-slate-200 dark:border-slate-800 shadow-sm hover:shadow-md transition-shadow duration-200 h-32">
                   <div className="flex justify-between items-start">
                     <div className={`p-2.5 rounded-lg ${stat.iconBg}`}>
                       <Icon className={`w-5 h-5 ${stat.iconColor}`} />

@@ -29,6 +29,8 @@ export default function App() {
   const [activeTab, setActiveTab] = useState<Tab>('dashboard');
   const [showRevisionLock, setShowRevisionLock] = useState(true);
 
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+
   // Router Bridge: Sync URL to Tab State
   useEffect(() => {
     if (location.pathname === '/ncrs') setActiveTab('issues');
@@ -52,14 +54,22 @@ export default function App() {
           role={user.role as any}
           username={user.username}
           activeTab={activeTab}
-          onTabChange={setActiveTab}
+          onTabChange={(tab) => {
+            setActiveTab(tab);
+            setMobileMenuOpen(false);
+          }}
           onLogout={logout}
+          isOpen={mobileMenuOpen}
+          onClose={() => setMobileMenuOpen(false)}
         />
 
         <div className="flex-1 flex flex-col h-screen overflow-hidden">
-          <TopBar onNavigate={setActiveTab} />
+          <TopBar
+            onNavigate={setActiveTab}
+            onMenuClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          />
 
-          <main className="flex-1 overflow-y-auto p-8">
+          <main className="flex-1 overflow-y-auto p-4 md:p-8">
             <div className="max-w-7xl mx-auto space-y-6">
               {activeTab === 'dashboard' && <Dashboard />}
               {activeTab === 'issues' && <Issues />}

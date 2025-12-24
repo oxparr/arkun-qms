@@ -238,7 +238,7 @@ export function ProjectManagement() {
                     <button className="text-xs font-bold text-blue-600 dark:text-blue-400 hover:underline">View All Packages</button>
                 </div>
                 <div className="overflow-x-auto">
-                    <table className="w-full text-sm text-left">
+                    <table className="w-full text-sm text-left min-w-[800px]">
                         <thead className="bg-slate-50 dark:bg-slate-950/50 text-slate-500 dark:text-slate-400 uppercase text-xs font-bold border-b border-slate-200 dark:border-slate-800">
                             <tr>
                                 <th className="px-6 py-3">WP ID</th>

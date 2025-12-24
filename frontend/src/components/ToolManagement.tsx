@@ -182,7 +182,7 @@ export function ToolManagement() {
           </div>
         </div>
         <div className="overflow-x-auto">
-          <table className="w-full text-left">
+          <table className="w-full text-left min-w-[800px]">
             <thead className="bg-slate-50 dark:bg-slate-800 border-b border-slate-200 dark:border-slate-700">
               <tr className="text-xs font-bold text-slate-500 dark:text-slate-400 uppercase tracking-wider">
                 <th className="px-6 py-4">Tool Details</th>

@@ -85,7 +85,7 @@ export function AndonBoard({ onBack }: AndonBoardProps) {
             {/* Header */}
             <div className="flex justify-between items-center mb-6 border-b-2 border-slate-700 pb-2">
                 <h1 className="text-4xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-cyan-400">
-                    BAKIRDEF FACTORY STATUS
+                    ARKUN FACTORY STATUS
                 </h1>
                 <div className="text-3xl font-bold text-slate-400 pr-16">
                     {currentTime.toLocaleTimeString()}
