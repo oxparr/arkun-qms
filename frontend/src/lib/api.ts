@@ -2,7 +2,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-    baseURL: 'https://arkun-qms.onrender.com',
+    baseURL: 'https://arkun-qms.onrender.com/api/v1',
     headers: {
         'Content-Type': 'application/json',
     },
