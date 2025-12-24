@@ -166,7 +166,7 @@ export function TopBar({ onMenuClick, onNavigate }: TopBarProps) {
     ];
 
     return (
-        <header className="h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-30 px-6 flex items-center justify-between shadow-sm transition-colors duration-300">
+        <header className="h-16 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800 sticky top-0 z-50 px-6 flex items-center justify-between shadow-sm transition-colors duration-300">
 
             {/* Left: Mobile Menu & Search */}
             <div className="flex items-center gap-4">

@@ -132,7 +132,7 @@ export function Sidebar({ role, username, activeTab, onTabChange, onLogout, isOp
 
             {/* Sidebar Container */}
             <div className={`
-                fixed md:static inset-y-0 left-0 z-40
+                fixed md:sticky md:top-0 inset-y-0 left-0 z-40
                 w-64 bg-slate-900 text-slate-400 border-r border-slate-800 h-screen flex flex-col font-sans shrink-0
                 transition-transform duration-300 ease-in-out
                 ${isOpen ? 'translate-x-0' : '-translate-x-full md:translate-x-0'}

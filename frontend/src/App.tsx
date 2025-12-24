@@ -63,13 +63,13 @@ export default function App() {
           onClose={() => setMobileMenuOpen(false)}
         />
 
-        <div className="flex-1 flex flex-col h-screen overflow-hidden">
+        <div className="flex-1 flex flex-col min-h-screen">
           <TopBar
             onNavigate={setActiveTab}
             onMenuClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           />
 
-          <main className="flex-1 overflow-y-auto p-4 md:p-8">
+          <main className="flex-1 p-4 md:p-8">
             <div className="max-w-7xl mx-auto space-y-6">
               {activeTab === 'dashboard' && <Dashboard />}
               {activeTab === 'issues' && <Issues />}
